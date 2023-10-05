@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+    <script>
+        /* class Bike{
+            constructor(){
+                this.company="Honda";
+            }
+        }
+        class vehicle extends Bike{
+            constructor(name,price){
+                super();
+                this.name=name;
+                this.price=price;
+            }
+        }
+
+        var v1=new vehicle("Shine",70000);
+        document.writeln(v1.company+" "+v1.name+" "+v1.price); */
+
+        function Bike(company){
+            this.company=company;
+        }
+
+        Bike.prototype.Company=function(){
+            return this.company ;
+
+        }
+
+        function Vehicle(name,price){
+            this.name=name;
+            this.price=price;
+
+        }
+        var bike=new Bike("Pulser");
+        Vehicle.prototype=bike;
+        var v1=new Vehicle("MT-15",105000);
+        document.writeln(v1.Company()+" "+v1.name+" "+v1.price);
+
+ 
+    </script>
+</head>
+<body>`
+    <p>hello world</p>
+    
+</body>
+</html>

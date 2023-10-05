@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical1B</title>
+    <script>
+      /*  function Employee(name,lastname){
+            this.name=name;
+            this.lastname=lastname;
+        }
+
+        Employee.prototype.fullname=function() {
+            return this.name+this.lastname+"<br>";
+
+        }
+    
+        var emp1=new Employee("Pranav","Kirti");
+        var emp2=new Employee("Pawan","Kirti");
+        document.writeln(emp1.fullname());
+        document.writeln(emp2.fullname());
+    */
+   function Employee(name,lastname){
+    this.name=name;
+    this.lastname=lastname;
+   }
+
+   Employee.prototype.Company="Optics"
+
+   var emp=new Employee("Pranav","Kirti");
+   var emp2=new Employee("Pawan","Kirti");
+   document.writeln(emp.name+" "+emp.lastname+" "+emp.Company+"<br>")
+   document.writeln(emp2.name+" "+emp2.lastname+" "+emp2.Company)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

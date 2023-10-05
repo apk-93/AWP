@@ -1,0 +1,35 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax with Xml</title>
+    <script>
+        function Load(){
+            var x = new XMLHttpRequest();
+            x.onreadystatechange=function(){
+                if(x.readyState===4&&x.status===200){
+                    var obj=JSON.parse(x.responseText);
+                    document.getElementById("name").textContent=obj.name;
+                    document.getElementById("country").textContent=obj.country;
+                }
+            }
+            x.open("GET","data.json",true);
+            x.send();
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td id="name">Rohit</td>
+            <td id="country">England</td>
+        </tr>
+    </table>
+    <button onclick="Load()">Click to change</button>
+</body>
+</html>

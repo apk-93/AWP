@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .after {
+            color: green;
+            background-color: red;
+            border: 1px solid black;
+
+        }
+
+        .before {
+            color: aqua;
+            background-color:yellow;
+            border: 1px solid black;
+
+        }
+
+        .box {
+            background-color: red;
+            color: red;
+            width: 200px;
+            height: 300px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+    <h3><a href="google.com" class="after">google</a></h3>
+    <h3><a href="yahoo.com" class="_self">yahooo</a></h3>
+    <h3><a href="google.com" class="after">google</a></h3>
+    <h1 id="toggle" class="after"> H</h1>
+    <button>toggle</button>
+    
+</body>
+<script src="/bootstrap/jquery.min.js"></script>
+
+        <script>
+        $(document).ready(function () {
+            $("button").click(function() {
+                $("#toggle").toggleClass("before");
+            })});
+        if ($("a").hasClass("after") == true) {
+            $("a").removeClass("after");
+            $("a").addClass("before");
+
+        }
+        $(".box").mouseleave("mouseleave", function (event){
+            console.log(event);
+        });
+
+        $(".box").mouseover("mouseover", function (event){
+            console.log(event);
+        });
+
+    </script>
+
+</html>

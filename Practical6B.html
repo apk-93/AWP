@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax with php</title>                
+</head>
+<script>
+function showHint(Str){
+    
+    if(Str.length==0){
+        document.getElementById("textHint").innerHTML="";
+        return;
+    }
+    
+    var xhttp;
+    if (window.XMLHttpRequest){
+        xhttp = new XMLHttpRequest();
+    }
+    else {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xhttp.onreadystatechange = function (){
+        if(xhttp.readyState===4 && xhttp.status===200)
+        {
+            document.getElementById("textHint").innerHTML = xhttp.responseText;
+        }
+
+    };
+    
+    xhttp.open("GET","getSuggestions.php?q="+Str,true);
+
+    xhttp.send();
+}
+</script>
+<body>  
+<p>
+    <b>
+        Start typing a name in the input field below:
+    </b>
+</p>
+    <form><label for="fname">First Name: </label>
+    <input type="text" name="fname" id="fname" onkeyup="showHint(this.value)"></form>
+    <p>Suggestions:<p id="textHint"></p></p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 1</title>
+    <script>
+
+        //Declaring class
+        class Employee {
+            constructor(id, name) {
+                this.id = id;
+                this.name = name;
+            }
+            detail() {
+                document.writeln("id: " + this.id + " " + "name: " + this.name+ "<br>") ;
+            }
+        }
+        var e1 = new Employee(101, "Pranav");
+        var e2 = new Employee(102, "Sumit");
+        e1.detail();
+        e2.detail();
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
